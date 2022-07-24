@@ -1,0 +1,23 @@
+@import "./mixins";
+@import "./vars";
+@import "./components";
+
+@import "../normalize.css";
+
+$color-pack: false;
+
+@import '~vuetify/src/styles/main.sass';
+
+html body {
+  font-family: Quicksand, sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+html, body, .wrapper, #__nuxt, #__layout {
+  //height: 100%;
+}
+
+a {
+  text-decoration: none;
+}

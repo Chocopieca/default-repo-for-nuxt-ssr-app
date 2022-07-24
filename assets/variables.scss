@@ -2,3 +2,15 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+
+$grid-breakpoints: (
+  'xs': 0,
+  'sm': 600px,
+  'md': 960px,
+  'lg': 1264px - 24px,
+  'xl': 1430px - 24px
+);
+
+$carousel-dot-margin: 0;
+
+$dialog-border-radius: 0;

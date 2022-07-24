@@ -1,0 +1,72 @@
+$breakpoints: [
+  //[576, 'sm'],
+  [600, 'md'],
+  [960, 'lg'],
+  [1264, 'xl'],
+  [1904, 'xxl']
+];
+
+//sizes for padding and margin steps
+$sizes: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84];
+
+//title of class, name of property, name of second property
+// for example [ma, margin, null] => ma-1: { margin: 4px };
+$margin-padding-classes: [
+  [ma, margin, null],
+  [mx, margin-right, margin-left],
+  [my, margin-top, margin-bottom],
+  [mt, margin-top, null],
+  [ml, margin-left, null],
+  [mr, margin-right, null],
+  [mb, margin-bottom, null],
+  [pa, padding, null],
+  [px, padding-right, padding-left],
+  [py, padding-top, padding-bottom],
+  [pt, padding-top, null],
+  [pl, padding-left, null],
+  [pr, padding-right, null],
+  [pb, padding-bottom, null],
+];
+
+//name of property, title for class, value and title of property
+// for example [display, d, block] => d-block: { display: block };
+$global-classes: [
+  [display, d, block],
+  [display, d, flex],
+  [display, d, inline-block],
+  [display, d, none],
+  [justify-content, justify, start],
+  [justify-content, justify, center],
+  [justify-content, justify, end],
+  [justify-content, justify, space-between],
+  [justify-content, justify, space-around],
+  [align-items, align, start],
+  [align-items, align, center],
+  [align-items, align, end],
+  [flex-direction, flex, column],
+  [flex-direction, flex, row],
+  [flex-wrap, flex, wrap],
+  [text-align, text-align, center],
+  [text-align, text-align, left],
+  [text-align, text-align, rignt],
+  [text-transform, text, uppercase],
+  [text-transform, text, lowercase],
+];
+
+$cols: 12;
+
+$container-width: [
+  //540px,
+  960px,
+  //1140px,
+  //1320px,
+  //1440px,
+];
+
+//.test {
+//  flex-wrap: wrap;
+//  text-align: start;
+//  flex-direction: column;
+//  justify-content: space-around;
+//  align-items: center;
+//}

@@ -1,5 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
-
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -21,10 +19,15 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    { src: '@/assets/scss/styles.scss', lang: 'scss' },
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '@plugins/injectedComponents.js' },
+    { src: '@plugins/baseScripts.js' },
+    { src: '@plugins/vue-slick-carousel.js' },
+    { src: '@plugins/aos.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -36,37 +39,72 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    'nuxt-compress'
   ],
+
+  'nuxt-compress': {
+    gzip: {
+      threshold: 4096,
+    },
+    brotli: {
+      threshold: 4096,
+    },
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'nuxt-breakpoints',
+    'nuxt-ssr-cache',
   ],
 
+  cache: {
+    useHostPrefix: false,
+    pages: [
+      '/',
+    ],
+    store: {
+      type: 'memory',
+      max: 100,
+      ttl: 60,
+    },
+  },
+
+  image: {
+    dir: 'assets'
+  },
+
+  breakpoints: {
+    // default options
+    tablet: 600,
+    desktop: 960,
+    widescreen: 1264,
+    fullhd: 1904,
+    options: {
+      polyfill: true,
+      throttle: 200
+    }
+  },
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL:'https://cinema-api-test.y-media.io/v1',
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: true,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
-      }
-    }
+    customVariables: ['./assets/variables.scss'],
+    treeShake: true,
+    optionsPath: './plugins/vuetify.options.js',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  loading: {
+    color: '#75F7A4',
+    height: '5px',
+  },
 }
