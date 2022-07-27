@@ -28,7 +28,7 @@ export default {
     },
     src: {
       type: String,
-      default: 'https://commons.wikimedia.org/wiki/File:Android_O_Preview_Logo.png'
+      default: '~~/assets/logo.png'
     }
   },
   computed: {

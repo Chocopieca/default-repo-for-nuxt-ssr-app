@@ -24,10 +24,9 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '@plugins/services',
     { src: '@plugins/injectedComponents.js' },
     { src: '@plugins/baseScripts.js' },
-    { src: '@plugins/vue-slick-carousel.js' },
-    { src: '@plugins/aos.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -53,6 +52,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/i18n',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     'nuxt-breakpoints',
@@ -97,6 +97,18 @@ export default {
     customVariables: ['./assets/variables.scss'],
     treeShake: true,
     optionsPath: './plugins/vuetify.options.js',
+  },
+
+  i18n: {
+    locales: [ 'en', 'ru' ],
+    defaultLocale: 'ru',
+    vueI18n: {
+      fallbackLocale: 'ru',
+      messages: {
+        en: require('./i18n/en.json'),
+        ru: require('./i18n/ru.json'),
+      }
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
