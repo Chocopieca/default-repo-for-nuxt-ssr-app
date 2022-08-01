@@ -1,33 +1,23 @@
 <template>
-  <div>
+  <v-app class="wrapper">
+    <AppHeader />
     <Nuxt />
-  </div>
+    <AppFooter />
+    <client-only>
+      <IndexModal />
+    </client-only>
+    <BaseButtonUp />
+  </v-app>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
-    }
-  }
+  name: 'DefaultLayout',
+  components: {
+    AppHeader: () => import('~/components/app-header'),
+    AppFooter: () => import('~/components/app-footer'),
+    IndexModal: () => import('~/components/modal/index-modal'),
+    BaseButtonUp: () => import('~/components/ui/BaseButtonUp'),
+  },
 }
 </script>
