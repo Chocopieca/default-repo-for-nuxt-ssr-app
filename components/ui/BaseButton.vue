@@ -44,6 +44,8 @@ export default {
           return 'button-transparent';
         case 'border':
           return 'button-border';
+        case 'chips':
+          return 'button-chips';
         default:
           return 'button-default';
       }
@@ -52,6 +54,10 @@ export default {
       switch (this.buttonSize) {
         case 'small':
           return 'button-small size14-weight700';
+        case 'large':
+          return 'button-large size14-weight700';
+        case 'chip':
+          return 'button-chip size14-weight700';
         default:
           return 'button-big size16-weight700';
       }
@@ -69,9 +75,15 @@ export default {
 <style scoped lang="scss">
 .button {
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
   white-space: nowrap;
+  color: #D8514B;
   width: 100%;
+
+  &-large {
+    width: 100%;
+    height: 50px;
+  }
 
   &-big {
     width: 436px;
@@ -83,12 +95,16 @@ export default {
     height: 40px;
   }
 
+  &-chip {
+    height: 40px;
+  }
+
   &-default {
-    background: linear-gradient(90deg, #895EF2 7%, #19FB9B 89%);
-    box-shadow: 0px 7px 20px rgba(129, 100, 234, 0.3), 0px 6px 20px rgba(117, 247, 164, 0.3), inset 0px -3px 0px #74F6A3;
+    background: #373737;
+    border: 1px solid white;
 
     &:hover {
-      box-shadow: 0px 7px 30px rgba(129, 100, 234, 0.5), 0px 6px 30px rgba(117, 247, 164, 0.5), inset 0px -3px 0px #74F6A3;
+      box-shadow: #37373720;
     }
   }
 
@@ -103,6 +119,16 @@ export default {
   &-border {
     background: linear-gradient(90deg, rgba(137, 94, 242, 0.05) 7%, rgba(25, 251, 155, 0.05) 89%);
     border: 1px solid #19FB9B;
+  }
+
+  &-chips {
+    display: inline-block;
+    border: 1px solid #c18a2c;
+    border-radius: 20px;
+    padding: 5px 10px;
+    background: black;
+    cursor: pointer;
+    margin-bottom: 20px;
   }
 
   &-disabled {

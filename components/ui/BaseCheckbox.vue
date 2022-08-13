@@ -3,8 +3,8 @@
     <label class="d-flex justify-start align-center">
       <span class="mr-1">
         <input v-model="isChecked" type="checkbox" :name="name" :value="value">
-        <v-img v-show="!isChecked" :src="require('@/assets/icons/checkbox.png')" contain width="50" height="50"/>
-        <v-img v-show="isChecked" :src="require('@/assets/icons/active-checkbox.png')" contain width="50" height="50"/>
+        <v-icon v-show="!isChecked" class="grey">mdi-circle</v-icon>
+        <v-icon v-show="isChecked" class="green">mdi-circle</v-icon>
       </span>
       {{ title }}
     </label>

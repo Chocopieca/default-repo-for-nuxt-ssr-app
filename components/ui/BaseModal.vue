@@ -5,7 +5,7 @@
   >
     <v-card color="#121212" class="modal-form">
       <v-img
-        :src="require('../../assets/icons/cross-inline-icon.svg')"
+        :src="require('~~/assets/icons/cross-inline-icon.svg')"
         contain
         width="27"
         height="27"
