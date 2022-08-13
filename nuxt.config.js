@@ -27,6 +27,7 @@ export default {
     '@plugins/services',
     { src: '@plugins/injectedComponents.js' },
     { src: '@plugins/baseScripts.js' },
+    { src: '@plugins/modalScripts.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -55,6 +56,7 @@ export default {
     '@nuxtjs/i18n',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxt/image',
     'nuxt-breakpoints',
     'nuxt-ssr-cache',
   ],
