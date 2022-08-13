@@ -4,7 +4,7 @@
       <div
         class="main-red-text text-center mb-3"
         :class="getFontSize($breakpoints.width, 700, [32, 32, 32, 32, 32])"
-      >Спасибо за подписку</div>
+      >Спасибо</div>
     </BaseModal>
   </div>
 </template>

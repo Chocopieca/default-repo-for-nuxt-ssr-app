@@ -1,6 +1,8 @@
 <template>
   <div v-show="isShow && modalType">
-    <ThankYouModal v-show="modalType === 'ThankYouModal'"/>
+    <ModalThankYou v-show="modalType === 'modal-thank-you'"/>
+    <ModalConfirmation v-show="modalType === 'modal-confirmation'"/>
+    <ModalError v-show="modalType === 'modal-error'"/>
   </div>
 </template>
 
@@ -10,7 +12,9 @@ import {mapGetters} from "vuex";
 export default {
   name: "IndexModal",
   components: {
-    ThankYouModal: () => import('./thank-you-modal'),
+    ModalThankYou: () => import('./modal-thank-you'),
+    ModalConfirmation: () => import('./modal-confirmation'),
+    ModalError: () => import('./modal-error'),
   },
   computed: {
     ...mapGetters({

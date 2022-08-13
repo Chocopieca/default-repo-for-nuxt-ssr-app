@@ -6,7 +6,7 @@
       @click.stop=""
     >
       <v-img
-        :src="require('../../assets/icons/cross-inline-icon.svg')"
+        :src="require('~~/assets/icons/cross-inline-icon.svg')"
         contain
         width="27"
         height="27"
